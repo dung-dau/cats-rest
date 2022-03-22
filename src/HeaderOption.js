@@ -3,9 +3,9 @@ import './HeaderOption.css';
 import Avatar from '@mui/material/Avatar';
 
 
-function HeaderOption({ avatar, Icon, title }) {
+function HeaderOption({ avatar, Icon, title, onClick }) {
   return (
-    <div className='header-option'>
+    <div onClick={onClick} className='header-option'>
         {/* Essentially an if statement that renders the Icon component if the property was passed in */}
         {Icon && <Icon className='header-option-icon'/>}
 

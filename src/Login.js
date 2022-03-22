@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import './Login.css';
 import logo from './linkedin-logo.png';
 import { useDispatch } from 'react-redux';
-import login from './features/userSlice';
+import { login } from './features/userSlice';
 import { auth } from './firebase';
+import { createUserWithEmailAndPassword ,signInWithEmailAndPassword,
+         updateProfile,
+} from 'firebase/auth';
 
 function Login() {
   const [email, setEmail] = useState("")
@@ -13,7 +16,17 @@ function Login() {
   const dispatch = useDispatch()
 
   const loginToApp = (e) => {
-    e.preventDefault()
+    e.preventDefault();
+    signInWithEmailAndPassword(auth, email, password).then(userAuth => {
+      dispatch(login({
+        email: userAuth.user.email,
+        uid: userAuth.user.uid,
+        displayName: userAuth.user.displayName,
+        photoUrl: userAuth.user.photoURL,
+      }))
+    }).catch(error => {
+      alert(error)
+    }) 
   }
 
   const register = () => {
@@ -21,16 +34,16 @@ function Login() {
       return alert("Please enter a full name!");
     }
 
-    auth.createUserWithEmailAndPassword(email, password).then((userAuth) => {
-      userAuth.user.updateProfile({
-        displayName: name,
+    createUserWithEmailAndPassword(auth, email, password).then((userAuth) => {
+      updateProfile(auth.currentUser, {
+        displayName: name, 
         photoURL: profilePic,
       }).then(() => {
         dispatch(login({
-          email: userAuth.user.email,
-          uid: userAuth.user.uid,
-          displayName: name,
-          photoURL: profilePic,
+              email: userAuth.user.email,
+              uid: userAuth.user.uid,
+              displayName: name,
+              photoURL: profilePic,
         }))
       })
     }).catch(error => alert(error))
