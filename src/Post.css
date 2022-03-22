@@ -1,0 +1,39 @@
+/* targets the div that contains everything else */
+.post {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+/* targets the div that contains the Avatar component
+   and the post-info div */
+.post-header {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+/* targets the div that contains an h2 with the name and 
+   a <p> that contains the description */
+.post-info {
+    margin-left: 10px;
+}
+
+.post-info > p {
+    font-size: 12px;
+    color: gray;
+}
+
+/* targets a div that exists at the same level as post-header */
+/* overflow-wrap creates a new line when a word is too long to 
+   fit in the container */
+/* anywhere means that the word can be split at any point */
+.post-body {
+    overflow-wrap: anywhere;
+}
+
+/* targets a div that contains the 4 input options:
+    like, comment, share and send */
+.post-buttons {
+    display: flex;
+}

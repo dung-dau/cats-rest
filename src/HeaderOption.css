@@ -1,0 +1,33 @@
+.header-option {
+    display: flex;
+    /* sets the direction of the main axis to go from top to bottom */
+    /* does not actually change anything */
+    flex-direction: column;
+    /* sets the alignment of the axis perpendicular to the main axis */
+    /* left to right in this case */
+    align-items: center;
+    margin-right: 20px;
+    color: gray;
+    cursor: pointer; 
+}
+
+.header-option-title {
+    /* reduces the font size from the default */
+    font-size: 12px;
+    /* changes bolding so that there is less of it */
+    font-weight: 400;
+}
+
+.header-option-icon {
+    /* maintains the aspect ratio */
+    object-fit: contain;
+
+    /* !important overrides the mui icon styles */
+    height: 25px !important;
+    width: 25px !important;
+}
+
+/* targets the header option when the cursor is over it */
+.header-option:hover {
+    color: black;
+}

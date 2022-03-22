@@ -1,0 +1,59 @@
+.feed {
+    /* the parent div has display: flex set */
+    /* targets the parent div of the fed */
+    flex: 0.6;
+    margin: 0 20px;
+}
+
+/* targets the child div of the .feed div */
+/* covers the first 1/4 of the div */
+.feed-input-container {
+    background-color: white;
+    padding: 10px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px
+}
+
+/* targets the div that contains the pencil icon,
+   the input tag and the send button */
+.feed-input {
+    border: 1px solid lightgray;
+    border-radius: 30px;
+    display: flex;
+    padding: 10px;
+    color: gray;
+    padding-left: 15px;
+}
+
+.feed-input > form {
+    display: flex;
+    width: 100%;
+}
+
+.feed-input > form > input {
+    border: none;
+    /* increases the size of the search bar */
+    /* equivalent to flex-grow: 1 */
+    flex: 1;
+    margin-left: 10px;
+
+    /* decreases the thickness of the outline when the search bar is active */
+    /* the outline is right outside of the border */
+    outline-width: 0;
+
+    /* affects the text that gets typed into the search bar */
+    font-weight: 600;
+}
+
+/* targets the button tag */
+.feed-input > form > button {
+    /* hides the button but maintains the functionality
+       of the form by pressing enter instead of the button */
+    display: none;
+}
+
+.feed-input-options {
+    display: flex;
+    justify-content: space-evenly;
+}

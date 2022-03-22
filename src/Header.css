@@ -1,0 +1,70 @@
+.header {
+    /* for flexbox layout for the 2 divs within this div */
+    display: flex;
+
+    /* keeps the header at the top */
+    position: sticky;
+    top: 0;
+    /* 
+       makes it so that all divs have an equal amount of space
+       around them  
+    */
+    justify-content: space-evenly;
+    /* creates the sudo HR tag at the bottom of the header */
+    border-bottom: 0.1px solid lightgray;
+
+    /* padding creates the space so the content of the header is centered */
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    width: 100%;
+
+    /* Most will be on top of every other element on the page */
+    z-index: 999;
+    background-color: white;
+}
+
+.header-left {
+    /* for the img and the div inside this div */
+    display: flex;
+}
+
+/* targets the image in the div with the header-left class */
+.header-left > img {
+    /* maintains the aspect ratio */
+    object-fit: contain;
+    height: 40px;
+    /* sets a margin between the logo and the searchbar */
+    margin-right: 10px;
+}
+
+.header-search {
+    /* adds padding so that the search bar is lowered vertically */
+    padding: 10px;
+    /* flexbox for the search icon and the input tag */
+    display: flex;
+    /* align-items lines up the items vertically */
+    align-items: center;
+    /* doesn't appear to do anything as the border of the div is invisible */
+    border-radius: 5px;
+    /* sets the height of the div so the icon and the input tag line up better */
+    height: 22px;
+    /* changes the color of the icon to gray */
+    color: gray;
+    /* gives the background color to the searchbar */
+    background-color: #eef3f8;
+}
+
+.header-search > input {
+    /* removes the default box when typing in text */
+    outline: none;
+    /* removes the default border of the input tag */
+    border: none;
+    /* Doesn't appear to do anything */
+    background: none;
+}
+
+/* targets the header option components (home, my network, etc)  */
+.header-right {
+    display: flex;
+}
