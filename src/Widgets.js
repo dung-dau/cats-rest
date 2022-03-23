@@ -20,11 +20,11 @@ function Widgets() {
   return (
     <div className='widgets'>
         <div className="widgets-header">
-            <h2>LinkedIn News</h2>
+            <h2>News</h2>
             <InfoIcon />
         </div>
-        {newsArticle("Coronavirus", "Top news - 10000+ readers")}
-        {newsArticle("Ukraine Updates", "Top news - 9582 readers")}
+        {newsArticle("Hidden Catnip Stash Found", "Top news - 10000+ readers")}
+        {newsArticle("Price of Yarn Increases", "Top news - 9582 readers")}
 
     </div>
 

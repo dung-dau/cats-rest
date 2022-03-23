@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Login.css';
-import logo from './linkedin-logo.png';
+import logo from './cat-logo.jpg';
 import { useDispatch } from 'react-redux';
 import { login } from './features/userSlice';
 import { auth } from './firebase';
@@ -60,9 +60,7 @@ function Login() {
         <button type='submit' onClick={loginToApp}>Sign In</button>
       </form>
 
-      <p>Not a member?
-        <span className='login-register' onClick={register}> Register Now</span>
-      </p>
+      <button onClick={register} className="login-register">Register</button>
     </div>
   )
 }

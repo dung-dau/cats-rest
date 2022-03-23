@@ -9,7 +9,7 @@
        makes it so that all divs have an equal amount of space
        around them  
     */
-    justify-content: space-evenly;
+    justify-content: space-between;
     /* creates the sudo HR tag at the bottom of the header */
     border-bottom: 0.1px solid lightgray;
 
@@ -21,12 +21,14 @@
 
     /* Most will be on top of every other element on the page */
     z-index: 999;
-    background-color: white;
+    background-color: #bf1e2d;
 }
 
 .header-left {
     /* for the img and the div inside this div */
     display: flex;
+    flex: 0.2;
+    justify-content: center;
 }
 
 /* targets the image in the div with the header-left class */
@@ -36,6 +38,12 @@
     height: 40px;
     /* sets a margin between the logo and the searchbar */
     margin-right: 10px;
+    cursor: pointer;
+}
+
+.header-middle {
+    display: flex;
+    flex: 0.4;
 }
 
 .header-search {
@@ -53,6 +61,7 @@
     color: gray;
     /* gives the background color to the searchbar */
     background-color: #eef3f8;
+    width: 100%;
 }
 
 .header-search > input {
@@ -62,9 +71,11 @@
     border: none;
     /* Doesn't appear to do anything */
     background: none;
+    width: 100%;
 }
 
 /* targets the header option components (home, my network, etc)  */
 .header-right {
     display: flex;
+    flex: 0.3;
 }

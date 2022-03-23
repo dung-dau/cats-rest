@@ -58,7 +58,6 @@ function Feed() {
         <div className='feed-input-options'>
           <InputOption Icon={ImageIcon} title='Photo' color='#7085F9'/>
           <InputOption Icon={SubscriptionsIcon} title='Video' color='#E7A33E'/>
-          <InputOption Icon={EventNoteIcon} title='Event' color='#C0CBCD' />
           <InputOption Icon={CalendarViewDayIcon} title='Write article' color='#7FC15E' />
         </div>
       </div>

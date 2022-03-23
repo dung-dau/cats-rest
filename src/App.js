@@ -32,14 +32,21 @@ function App() {
 
   return (
     <div className="app">
-      <Header />
       {!user ? <Login /> :(
-        <div className='app-body'>
-          <Sidebar />
-          <Feed />
-          <Widgets />
+        <div className="app-wrapper">
+          <Header />
+          <div className='app-body'>
+            <div className="app-left">
+              <Sidebar />
+            </div>
+            <div className="app-middle">
+              <Feed />
+            </div>
+            <div className="app-right">
+              <Widgets />
+            </div>
+          </div>
         </div>
-
       )}
     </div>
   );
