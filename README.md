@@ -1,5 +1,5 @@
 ## About
-This is a social media website built with React, Redux, and Firebase. This
+A social media website built with React, CSS, Redux, and Firebase. This
 app is also accessible from https://social-media-website-8b242.web.app/
 
 ### `npm start`
