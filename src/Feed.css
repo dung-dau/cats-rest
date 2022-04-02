@@ -1,3 +1,42 @@
+.app {
+    background-color: #f3f2ef;
+}
+
+.app-body {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.app-left {
+    flex: 1;
+}
+
+.app-middle {
+    flex: 2;
+}
+
+.app-right {
+    flex: 1;
+}
+
+@media screen and (max-width: 400px) {
+    .app-body {
+        flex-direction: column;
+    }
+
+    .app-left {
+        display: none;
+    }
+
+    .app-right {
+        display: none;
+    }
+}
+
 .feed {
     /* the parent div has display: flex set */
     /* targets the parent div of the fed */

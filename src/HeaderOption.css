@@ -29,5 +29,5 @@
 
 /* targets the header option when the cursor is over it */
 .header-option:hover {
-    color: black;
+    color: #ccc;
 }

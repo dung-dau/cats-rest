@@ -14,6 +14,8 @@ import { addDoc, collection, onSnapshot, orderBy, serverTimestamp,
 import { useSelector } from 'react-redux';
 import { selectUser } from './features/userSlice';
 import FlipMove from 'react-flip-move';
+import Sidebar from './Sidebar';
+import Widgets from './Widgets';
 
 function Feed() {
   const user = useSelector(selectUser)
@@ -45,32 +47,42 @@ function Feed() {
   }
 
   return (
-    <div className='feed'>
-      <div className='feed-input-container'>
-        <div className='feed-input'>
-          <CreateIcon />
-          <form>
-            <input value={input} onChange={e => setInput(e.target.value)} type='text' />
-            <button onClick={sendPost} type='submit'>Send</button>
-          </form>
-        </div>
-        <div className='feed-input-options'>
-          <InputOption Icon={ImageIcon} title='Photo' color='#7085F9'/>
-          <InputOption Icon={SubscriptionsIcon} title='Video' color='#E7A33E'/>
-          <InputOption Icon={CalendarViewDayIcon} title='Write article' color='#7FC15E' />
+    <div className='app-body'>
+      <div className="app-left">
+        <Sidebar />
+      </div>
+      <div className='app-middle'>
+        <div className='feed'>
+          <div className='feed-input-container'>
+            <div className='feed-input'>
+              <CreateIcon />
+              <form>
+                <input value={input} onChange={e => setInput(e.target.value)} type='text' />
+                <button onClick={sendPost} type='submit'>Send</button>
+              </form>
+            </div>
+            <div className='feed-input-options'>
+              <InputOption Icon={ImageIcon} title='Photo' color='#7085F9'/>
+              <InputOption Icon={SubscriptionsIcon} title='Video' color='#E7A33E'/>
+              <InputOption Icon={CalendarViewDayIcon} title='Write article' color='#7FC15E' />
+            </div>
+          </div>
+          {/* Posts */}
+          {posts.map(({id, data: { name, message, photoUrl }}) => (
+            <FlipMove>
+              <Post 
+                key={id}
+                name={name}
+                message={message}
+                photoUrl={photoUrl}
+              />
+            </FlipMove>
+          ))}
         </div>
       </div>
-      {/* Posts */}
-      {posts.map(({id, data: { name, message, photoUrl }}) => (
-        <FlipMove>
-          <Post 
-            key={id}
-            name={name}
-            message={message}
-            photoUrl={photoUrl}
-          />
-        </FlipMove>
-      ))}
+      <div className="app-right">
+        <Widgets />
+      </div>
     </div>
   )
 }

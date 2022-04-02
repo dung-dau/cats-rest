@@ -1,0 +1,36 @@
+.messages {
+    display: flex;
+    width: 100%;
+    height: 91.5vh;
+    top: 100px;
+    margin: none;
+}
+
+.messages-left {
+    width: 35%;
+    height: 100%;
+    margin: none;
+    border-right: 1px solid gray;
+    display: flex;
+    justify-content: space-between;
+}
+
+.messages-left > .MuiSvgIcon-root {
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    padding: 10px;
+
+}
+
+.messages-right {
+    width: 65%;
+    height: 100%;
+    margin: none;
+}
+
+.messages-text {
+    font-weight: bold;
+    font-size: 30px;
+    padding: 5px;
+}

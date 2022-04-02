@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import Header from './Header';
-import Sidebar from './Sidebar';
 import Feed from './Feed';
 import Login from './Login';
 import { useDispatch, useSelector } from 'react-redux';
 import { auth } from './firebase';
 import { login, logout, selectUser } from './features/userSlice';
-import Widgets from './Widgets';
+import { Routes, Route } from 'react-router-dom';
+import Notifications from './Notifications';
+import Messages from './Messages';
 
 function App() {
   const user = useSelector(selectUser);
@@ -35,17 +36,11 @@ function App() {
       {!user ? <Login /> :(
         <div className="app-wrapper">
           <Header />
-          <div className='app-body'>
-            <div className="app-left">
-              <Sidebar />
-            </div>
-            <div className="app-middle">
-              <Feed />
-            </div>
-            <div className="app-right">
-              <Widgets />
-            </div>
-          </div>
+          <Routes>
+            <Route path='/' element={<Feed />}/>
+            <Route path='/notifications' element={<Notifications />} />
+            <Route path='/messages' element={<Messages />} />
+          </Routes>
         </div>
       )}
     </div>

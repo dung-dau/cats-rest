@@ -10,9 +10,12 @@ import { auth } from './firebase';
 import { logout } from './features/userSlice';
 import logo from './cat-logo.jpg';
 import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
+import { useNavigate } from 'react-router-dom';
+import MessageIcon from '@mui/icons-material/Message';
 
 function Header() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const logoutOfApp = () => {
     dispatch(logout())
@@ -38,8 +41,9 @@ function Header() {
         <div className='header-right'>
             {/* Icon and title are passed in properties for the component */}
             {/* Allows for the creation of variations of the same component without repeating code */}
-            <HeaderOption Icon={HomeIcon} title='Home'/>
-            <HeaderOption Icon={NotificationsIcon} title='Notifications'/>
+            <HeaderOption Icon={HomeIcon} title='Home' onClick={() => navigate('/')}/>
+            <HeaderOption Icon={NotificationsIcon} title='Notifications' onClick={() => navigate('/notifications')}/>
+            <HeaderOption Icon={MessageIcon} title='Messages' onClick={() => navigate('/messages')}/>
             <HeaderOption
                           Icon={PowerSettingsNewIcon}
                           title='Logout'
