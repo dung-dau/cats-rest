@@ -18,8 +18,8 @@ A live version of the app is also accessible from https://social-media-website-8
 
 ## Installation Instructions
 Run the following commands: <br/><br/>
-`git clone https://github.com/dung-dau/social-media-website.git` <br/><br/>
-`cd social-media-website` <br/><br/>
+`git clone https://github.com/dung-dau/cats-rest.git` <br/><br/>
+`cd cats-rest` <br/><br/>
 `npm install` <br/><br/>
 `npm run start` <br/><br/>
 Unless a port is specified or if port 3000 is already being used by another applcation, <br />
