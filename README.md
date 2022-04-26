@@ -1,4 +1,4 @@
-## Social Media App
+## Cat's Rest
 A social media app that was built with HTML, CSS, React, Redux and Firebase.
 
 
